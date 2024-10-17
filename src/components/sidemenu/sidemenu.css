@@ -5,7 +5,7 @@
     padding: 8px;
     gap: 8px;
     position: fixed;
-    border-right: 1px solid #F1F5F9
+    border-right: 1px solid #F1F5F9;
 }
 
 .side-menu h2 {
@@ -43,6 +43,7 @@
     padding: 0px 10px;
     text-decoration: none;
     gap: 15px;
+    position: relative;
 }
 
 .menu-item > svg {
@@ -53,6 +54,9 @@
 .menu-link {
     font-size: 14px;
     line-height: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .active-link {
@@ -75,13 +79,13 @@
 }
 
 .count {
+    margin-left: auto;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 24px;
     height: 24px;
-    border-radius: 24px;
+    border-radius: 12px;
     background: #F43F5E;
 }
 

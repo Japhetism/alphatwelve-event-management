@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { menuItems } from "../../fixtures/sidemenu";
 import { ISideMenuItem } from "../../interfaces/sidemenu";
-import "./sidemenu.css";
 import { LeftIcon } from "../../assets/icons/leftIcon";
 import { SwitchIcon } from "../../assets/icons/switchIcon";
 import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
+import "./sidemenu.css";
 
 const SideMenu: React.FC = () => {
     return (
@@ -24,9 +24,11 @@ const SideMenu: React.FC = () => {
                                     <>
                                         <Icon color={iconColor} />
                                         {item.name}
-                                        <div className="count">
-                                            <span>3</span>
-                                        </div>
+                                        {item.showNotification && (
+                                            <div className="count">
+                                                <span>3</span>
+                                            </div>
+                                        )}
                                     </>
                                 );
                             }}

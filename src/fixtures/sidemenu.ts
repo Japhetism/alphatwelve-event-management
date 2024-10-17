@@ -36,6 +36,7 @@ export const menuItems: ISideMenuItem[] = [
         id: 5,
         name: "Notifications",
         link: "/notifications",
+        showNotification: true,
         icon: NotificationIcon,
     },
     {
