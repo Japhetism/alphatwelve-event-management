@@ -97,3 +97,37 @@
     text-align: left;
     color: #FFFFFF;
 }
+
+.side-menu.collapsed {
+    width: 64px;
+}
+
+.side-menu.collapsed h2 {
+    display: none;
+}
+
+.side-menu.collapsed ul {
+    list-style-type: none;
+    padding: 0;
+    width: auto;
+}
+
+.side-menu.collapsed .menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 36px;
+    font-family: "Inter";
+    font-weight: 400;
+    text-align: left;
+    margin: 15px 0;
+    background: var(--New-Select, #FFFFFF);
+    border-radius: 2px 0px 0px 0px;
+    padding: 0px 10px;
+    text-decoration: none;
+    gap: 15px;
+    position: relative;
+}
+
+

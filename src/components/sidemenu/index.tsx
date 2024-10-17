@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { menuItems } from "../../fixtures/sidemenu";
 import { ISideMenuItem } from "../../interfaces/sidemenu";
@@ -7,9 +8,15 @@ import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
 import "./sidemenu.css";
 
 const SideMenu: React.FC = () => {
+    const [isCollapsed, setIsCollapsed] = useState(false);
+
+    const toggleCollapse = () => {
+        setIsCollapsed(!isCollapsed);
+    };
+
     return (
-        <div className="side-menu">
-            <h2>Full logo</h2>
+        <div className={`side-menu ${isCollapsed ? 'collapsed' : ''}`}>
+            {!isCollapsed && <h2>Full logo</h2>}
             <ul>
                 {menuItems.map((item: ISideMenuItem) => (
                     <li key={item.id}>
@@ -23,8 +30,8 @@ const SideMenu: React.FC = () => {
                                 return (
                                     <>
                                         <Icon color={iconColor} />
-                                        {item.name}
-                                        {item.showNotification && (
+                                        {!isCollapsed && item.name}
+                                        {(item.showNotification && !isCollapsed) && (
                                             <div className="count">
                                                 <span>3</span>
                                             </div>
@@ -38,10 +45,10 @@ const SideMenu: React.FC = () => {
                 <li>
                     <div
                         className="menu-item extra-link"
-                        onClick={() => console.log("here")}
+                        onClick={toggleCollapse}
                     >
                         <LeftIcon />
-                        Collapse
+                        {!isCollapsed ? "Collapse" : "Expand"}
                     </div>
                 </li>
                 <li>
@@ -50,7 +57,7 @@ const SideMenu: React.FC = () => {
                         onClick={() => console.log("here")}
                     >
                         <SwitchIcon />
-                        Dark mode
+                        {!isCollapsed && "Dark mode"}
                     </div>
                 </li>
                 <li>
@@ -59,10 +66,12 @@ const SideMenu: React.FC = () => {
                         onClick={() => console.log("here")}
                     >
                         <UserMaskIcon />
-                        <div className="user-section">
-                            <span>Rudra Devi</span>
-                            <span>rudra.devi@gmail.com</span>
-                        </div>
+                        {!isCollapsed && (
+                            <div className="user-section">
+                                <span>Rudra Devi</span>
+                                <span>rudra.devi@gmail.com</span>
+                            </div>
+                        )}
                     </div>
                 </li>
             </ul>
