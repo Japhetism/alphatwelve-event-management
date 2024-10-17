@@ -6,6 +6,7 @@ import { LeftIcon } from "../../assets/icons/leftIcon";
 import { SwitchIcon } from "../../assets/icons/switchIcon";
 import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
 import "./sidemenu.css";
+import { ExpandIcon } from "../../assets/icons/expandIcon";
 
 const SideMenu: React.FC = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -47,8 +48,8 @@ const SideMenu: React.FC = () => {
                         className="menu-item extra-link"
                         onClick={toggleCollapse}
                     >
-                        <LeftIcon />
-                        {!isCollapsed ? "Collapse" : "Expand"}
+                        {!isCollapsed ? <LeftIcon /> : <ExpandIcon />}
+                        {!isCollapsed ? "Collapse" : ""}
                     </div>
                 </li>
                 <li>
