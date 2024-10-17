@@ -1,6 +1,6 @@
 export const UserMaskIcon = () => (
     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_928_3363)">
+        <g clipPath="url(#clip0_928_3363)">
             <rect x="1" y="1" width="32" height="32" rx="16" fill="#F3F4F6"/>
             <mask id="mask0_928_3363" maskUnits="userSpaceOnUse" x="1" y="1" width="32" height="32">
                 <circle cx="17" cy="17" r="16" fill="#F1F5F9"/>
