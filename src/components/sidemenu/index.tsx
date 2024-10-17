@@ -2,6 +2,9 @@ import { NavLink } from "react-router-dom";
 import { menuItems } from "../../fixtures/sidemenu";
 import { ISideMenuItem } from "../../interfaces/sidemenu";
 import "./sidemenu.css";
+import { LeftIcon } from "../../assets/icons/leftIcon";
+import { SwitchIcon } from "../../assets/icons/switchIcon";
+import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
 
 const SideMenu: React.FC = () => {
     return (
@@ -12,7 +15,7 @@ const SideMenu: React.FC = () => {
                     <li key={item.id}>
                         <NavLink 
                             to={item.link} 
-                            className={({ isActive }) => (isActive ? "active-link menu-item" : "inactive-link menu-item")}
+                            className={({ isActive }) => (isActive ? "active-link menu-item menu-link" : "inactive-link menu-item menu-link")}
                         >
                             {({ isActive }) => {
                                 const Icon = item.icon;
@@ -27,6 +30,36 @@ const SideMenu: React.FC = () => {
                         </NavLink>
                     </li>
                 ))}
+                <li>
+                    <div
+                        className="menu-item extra-link"
+                        onClick={() => console.log("here")}
+                    >
+                        <LeftIcon />
+                        Collapse
+                    </div>
+                </li>
+                <li>
+                    <div
+                        className="menu-item extra-link"
+                        onClick={() => console.log("here")}
+                    >
+                        <SwitchIcon />
+                        Dark mode
+                    </div>
+                </li>
+                <li>
+                    <div
+                        className="menu-item extra-link"
+                        onClick={() => console.log("here")}
+                    >
+                        <UserMaskIcon />
+                        <div className="user-section">
+                            <span>Rudra Devi</span>
+                            <span>rudra.devi@gmail.com</span>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     );

@@ -21,7 +21,7 @@
     justify-content: center;
     align-items: center;
 }
-  
+
 .side-menu ul {
     list-style-type: none;
     padding: 0;
@@ -31,22 +31,28 @@
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 15px;
-    width: auto;
     height: 36px;
     font-family: "Inter";
-    font-size: 14px;
     font-weight: 400;
-    line-height: 20px;
     text-align: left;
     margin: 15px 0;
     background: var(--New-Select, #FFF);
     border-radius: 2px 0px 0px 0px;
     padding: 0px 10px;
-    font-weight: 400;
     text-decoration: none;
+    gap: 15px;
 }
-  
+
+.menu-item > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-link {
+    font-size: 14px;
+    line-height: 20px;
+}
+
 .active-link {
     color: var(--Primary, #8576FF);
     background: var(--New-Select, #FCF7FF);
@@ -55,4 +61,13 @@
 .inactive-link {
     color: #334155;
 }
-  
+
+.extra-link {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.user-section {
+    display: flex;
+    flex-direction: column;
+}
