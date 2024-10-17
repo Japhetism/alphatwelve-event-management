@@ -1,9 +1,11 @@
 .app {
   display: flex;
+  height: 100vh;
 }
 
 .content {
-  margin-left: 220px; /* Adjust based on side menu width */
-  padding: 20px;
-  flex-grow: 1;
+  margin-left: 280px;
+  padding: 16px;
+  height: 100vh;
+  overflow-y: auto;
 }
