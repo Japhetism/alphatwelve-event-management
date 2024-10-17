@@ -24,6 +24,9 @@ const SideMenu: React.FC = () => {
                                     <>
                                         <Icon color={iconColor} />
                                         {item.name}
+                                        <div className="count">
+                                            <span>3</span>
+                                        </div>
                                     </>
                                 );
                             }}
