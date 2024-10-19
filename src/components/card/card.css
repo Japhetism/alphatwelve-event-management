@@ -5,8 +5,15 @@
     width: 260px;
     height: 88px;
     border-radius: 5px;
-    color:#FFFFFF;
-    border: 1px solid var(--Grays-Gray-6, #F2F2F7)
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 1px solid var(--Grays-Gray-6, #F2F2F7);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
 .card-section {
