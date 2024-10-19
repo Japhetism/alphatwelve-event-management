@@ -1,0 +1,21 @@
+.home-container {
+    margin-top: 10px;
+}
+
+.home-title {
+    font-family: "Inter";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #000000;
+}
+
+.home-statistics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
