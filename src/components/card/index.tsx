@@ -1,5 +1,6 @@
 import { ArrowDownRightIcon } from "../../assets/icons/arrowDownRightIcon";
 import { ArrowUpRightIcon } from "../../assets/icons/arrowUpRightIcon"
+import { InformationIcon } from "../../assets/icons/informationIcon";
 import { ICard } from "../../interfaces/card";
 import "./card.css";
 
@@ -11,7 +12,12 @@ const Card = ({
     return (
         <div className="card-container">
             <div className="card-section">
-                <div className="card-title">{title}</div>
+                <div className="card-title-container">
+                    <div className="card-title">
+                        {title}
+                    </div>
+                    <InformationIcon />
+                </div>
                 <div className="card-value-container">
                     <div className="card-value">{value}</div>
                     {percentage >= 0 ? <ArrowUpRightIcon /> : <ArrowDownRightIcon />}
