@@ -1,6 +1,7 @@
 .app {
   display: flex;
   height: 100vh;
+  position: relative;
 }
 
 .content {
@@ -12,4 +13,15 @@
 
 .content.collapsed {
   margin-left: 100px;
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
 }

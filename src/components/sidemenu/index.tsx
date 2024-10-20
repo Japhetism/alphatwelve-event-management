@@ -1,25 +1,31 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { menuItems } from "../../fixtures/sidemenu";
+import AppBar from "../appBar";
 import { ISideMenuItem } from "../../interfaces/sidemenu";
 import { LeftIcon } from "../../assets/icons/leftIcon";
 import { SwitchIcon } from "../../assets/icons/switchIcon";
 import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
 import { ExpandIcon } from "../../assets/icons/expandIcon";
+import { menuItems } from "../../fixtures/sidemenu";
 import "./sidemenu.css";
 
 const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void }> = ({ onCollapseToggle }) => {
-    const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
     const toggleCollapse = () => {
         setIsCollapsed(!isCollapsed);
         onCollapseToggle(!isCollapsed);
     };
 
+    const handleMenuToggle = () => {
+        setIsMenuOpen(!isMenuOpen);
+    }
+
     return (
         <div className={`side-menu ${isCollapsed ? 'collapsed' : ''}`}>
-            {!isCollapsed && <h2>Full logo</h2>}
-            <ul>
+            <AppBar onMenuToggle={handleMenuToggle} isMenuOpen={isMenuOpen} />
+            <ul className={isMenuOpen ? "side-menu-open" : "side-menu-close"}>
                 {menuItems.map((item: ISideMenuItem) => (
                     <li key={item.id}>
                         <NavLink 

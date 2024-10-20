@@ -130,4 +130,23 @@
     position: relative;
 }
 
+@media (max-width: 768px) {
+    .side-menu {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #F1F5F9;
+    }
 
+    .side-menu ul {
+        width: 90%;
+    }
+
+    .side-menu-close {
+        display: none;
+    }
+
+    .side-menu-open {
+        display: block;
+    }
+}
