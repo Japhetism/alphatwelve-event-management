@@ -1,12 +1,13 @@
 import Card from "../../components/card";
+import Carousel from "../../components/carousel";
 import BarChart from "../../components/chart/barchart";
 import { homeData } from "../../fixtures/homeData";
 import { ICard } from "../../interfaces/card";
 import "./home.css";
 
 const Home = () => {
-    
-    const { statistics, monthlyEvents } = homeData;
+
+    const { statistics, monthlyEvents, news } = homeData;
     const eventLabels = Object.keys(monthlyEvents).map(month => month.charAt(0).toUpperCase() + month.slice(1, 3));
     const eventData = Object.values(monthlyEvents);
 
@@ -36,7 +37,9 @@ const Home = () => {
                             />
                         </div>
                     </div>
-                    <div className="event-slider-container">Slider</div>
+                    <div className="event-slider-container">
+                        <Carousel data={news} />
+                    </div>
                 </div>
             </div>
         </div>

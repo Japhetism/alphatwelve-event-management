@@ -35,5 +35,22 @@ export const homeData = {
         oct: 650,
         nov: 980,
         dec: 750
-    }
+    },
+    news: [
+        {
+            image: "/assets/images/image1.png",
+            title: "Latest News & Updates",
+            description: "Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.",
+        },
+        {
+            image: "/assets/images/image2.png",
+            title: "Latest News & Updates",
+            description: "Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.",
+        },
+        {
+            image: "/assets/images/image3.png",
+            title: "Latest News & Updates",
+            description: "Turpis interdum nunc varius ornare dignissim pretium. Massa ornare quis aliquet sed vitae. Sed velit nisi, fermentum erat. Fringilla purus, erat fringilla tincidunt quisque non. Pellentesque in ut tellus.",
+        },
+    ]
 }
