@@ -58,3 +58,12 @@
 .event-history {
     margin-top: 40px;
 }
+
+.event-history-header {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 16px;
+    text-align: left;
+    color: #000000;
+}

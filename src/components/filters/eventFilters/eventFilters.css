@@ -1,0 +1,139 @@
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1,076px;
+    height: 36px;
+    margin-bottom: 20px;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.search {
+    width: 200px;
+    height: 36px;
+    border-radius: 2px 0px 0px 0px;
+    border: 1px 0px 0px 0px;
+    border: 1px solid #E2E8F0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.date {
+    width: 88px;
+    height: 36px;
+    border-radius: 2px 0px 0px 0px;
+    border: 1px solid #E2E8F0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.status {
+    width: 99px;
+    height: 36px;
+    border-radius: 2px 0px 0px 0px;
+    border: 1px solid #E2E8F0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.name {
+    width: 95px;
+    height: 36px;
+    border-radius: 2px 0px 0px 0px;
+    border: 1px solid #E2E8F0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.display-label {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.display-sort {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.sort-recent {
+    width: 140px;
+    height: 36px;
+    border-radius: 2px 0px 0px 0px;
+    border: 1px solid #E2E8F0;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.sort-ellipsis {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 2px 0px 0px 0px;
+    border: 1px solid #E2E8F0;
+    background: #FFFFFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.download {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    width: 100px;
+    height: 36px;
+    padding-left: 10px;
+    border-radius: 2px 0px 0px 0px;
+    border: 1px solid #E2E8F0;
+    background: #FFFFFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}

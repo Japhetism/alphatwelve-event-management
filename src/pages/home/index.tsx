@@ -1,6 +1,7 @@
 import Card from "../../components/card";
 import Carousel from "../../components/carousel";
 import BarChart from "../../components/chart/barchart";
+import EventFilters from "../../components/filters/eventFilters";
 import EventTable from "../../components/table/event";
 import { homeData } from "../../fixtures/homeData";
 import { ICard } from "../../interfaces/card";
@@ -43,6 +44,8 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="event-history">
+                    <p className="event-history-header">Event History</p>
+                    <EventFilters />
                     <EventTable events={events} />
                 </div>
             </div>
