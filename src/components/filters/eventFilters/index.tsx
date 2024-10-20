@@ -7,39 +7,39 @@ const EventFilters = () => {
     return (
         <div className="filter-container">
             <div className="filter-section">
-                <div>
+                <div className="search-container">
                     <SearchInput className="search" />
                 </div>
-                <div>
+                <div className="date-container">
                     <select className="date">
                         <option>Date</option>
                     </select>
                 </div>
-                <div>
+                <div className="status-container">
                     <select className="status">
                         <option>Status</option>
                     </select>
                 </div>
-                <div>
+                <div className="name-container">
                     <select className="name">
                         <option>Name</option>
                     </select>
                 </div>
                 <div className="display-label">Displaying 100 results</div>
             </div>
-            <div className="filter-section">
+            <div className="filter-section-sort">
                 <div className="display-sort">Sort:</div>
-                <div>
+                <div className="sort-recent-container">
                     <select className="sort-recent">
                         <option>Most Recent</option>
                     </select>
                 </div>
-                <div>
+                <div className="sort-ellipsis-container">
                     <button className="sort-ellipsis">
                         <VerticalEllipsisIcon />
                     </button>
                 </div>
-                <div>
+                <div className="download-container">
                     <button className="download">
                         <DownloadIcon />
                         Export

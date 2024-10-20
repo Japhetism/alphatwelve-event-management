@@ -64,6 +64,7 @@
 .carousel-control.right {
     right: 10px;
 }
+
 @media (max-width: 768px) {
     .carousel-item img {
         width: 100%;
