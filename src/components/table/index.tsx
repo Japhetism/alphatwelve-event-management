@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { ChevronRightIcon } from "../../assets/icons/chevronRightIcon";
 import { ChevronLeftIcon } from "../../assets/icons/chevronLeftIcon";
-import { IEvent } from "../../interfaces/event";
-import { ITable } from "../../interfaces/table";
+import { ITableProps } from "../../interfaces/table";
 import "./table.css";
 
 const Table = ({
-    data
-}: ITable) => {
+    data,
+    columns,
+    rowsPerPageOptions = [10, 20, 50, 100],
+}: ITableProps) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0]);
 
     const indexOfLastRow = currentPage * rowsPerPage;
     const indexOfFirstRow = indexOfLastRow - rowsPerPage;
@@ -31,25 +32,19 @@ const Table = ({
             <table>
                 <thead>
                     <tr>
-                        <th>Event Name</th>
-                        <th>Date</th>
-                        <th>Speaker</th>
-                        <th>Status</th>
+                        {columns.map((column, index) => (
+                            <th key={index}>{column.header}</th>
+                        ))}
                     </tr>
                 </thead>
                 <tbody>
-                    {currentRows.map((row: IEvent) => (
-                        <tr key={row.id}>
-                            <td>{row.eventName}</td>
-                            <td>{row.date}</td>
-                            <td>{row.speaker}</td>
-                            <td>
-                                <div className="row-status-container">
-                                    <div className={`row-status ${row.status.toLowerCase() === "completed" ? "row-status-completed" : "row-status-in-progress"}`}>
-                                        <div className={`row-status-indicator ${row.status.toLowerCase() === "completed" ? "row-status-completed-indicator" : "row-status-in-progress-indicator"}`}></div>
-                                    </div>
-                                </div>
-                            </td>
+                    {currentRows.map((row, rowIndex) => (
+                        <tr key={rowIndex}>
+                            {columns.map((column, colIndex) => (
+                                <td key={colIndex}>
+                                    {column.render ? column.render(row) : row[column.accessor]}
+                                </td>
+                            ))}
                         </tr>
                     ))}
                 </tbody>
@@ -78,10 +73,9 @@ const Table = ({
                 <div className="rows-per-page">
                     <label htmlFor="rows-per-page" className="row-info">Show: </label>
                     <select className="row-select row-info" id="rows-per-page" value={rowsPerPage} onChange={handleRowsPerPageChange}>
-                        <option value={10}>10 rows</option>
-                        <option value={20}>20 rows</option>
-                        <option value={50}>50 rows</option>
-                        <option value={100}>100 rows</option>
+                        {rowsPerPageOptions.map(option => (
+                            <option key={option} value={option}>{option} rows</option>
+                        ))}
                     </select>
                 </div>
             </div>

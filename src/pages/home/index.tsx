@@ -1,7 +1,7 @@
 import Card from "../../components/card";
 import Carousel from "../../components/carousel";
 import BarChart from "../../components/chart/barchart";
-import Table from "../../components/table";
+import EventTable from "../../components/table/event";
 import { homeData } from "../../fixtures/homeData";
 import { ICard } from "../../interfaces/card";
 import "./home.css";
@@ -43,7 +43,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="event-history">
-                    <Table data={events} />
+                    <EventTable events={events} />
                 </div>
             </div>
         </div>

@@ -1,5 +1,11 @@
-import { IEvent } from "./event";
+export interface IColumn {
+    header: string;
+    accessor: string;
+    render?: (item: any) => React.ReactNode; 
+}
 
-export interface ITable {
-    data: IEvent[];
+export interface ITableProps {
+    data: any[];
+    columns: IColumn[];
+    rowsPerPageOptions?: number[];
 }

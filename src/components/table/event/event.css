@@ -1,0 +1,53 @@
+.row-status-container {
+    width: 99px;
+    height: 24px;
+}
+
+.row-status-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+}
+
+.row-status-completed-indicator {
+    background: #10B981;
+}
+
+.row-status-in-progress-indicator {
+    background: #3B82F6;
+}
+
+.row-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 6px;
+    border-radius: 99px;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.row-status-completed {
+    color: #10B981;
+    background: #D1FAE5;
+}
+
+.row-status-in-progress {
+    background: #DBEAFE;
+    color: #3B82F6;
+}
+
+.row-status-completed::after {
+    content: "Completed";
+}
+
+.row-status-in-progress::after {
+    content: "In Progress";
+    text-transform: none;
+}
