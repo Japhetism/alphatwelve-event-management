@@ -116,6 +116,10 @@ td {
     display: block;
 }
 
+.table-row-grey {
+    background: var(--Grays-Gray-6, #F2F2F7);
+}
+
 @media (min-width: 768px) {
     .expanded-row {
         display: none;

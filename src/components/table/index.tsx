@@ -68,7 +68,7 @@ const Table = ({
                         const rowId = indexOfFirstRow + rowIndex;
                         return (
                             <React.Fragment key={rowId}>
-                                <tr onClick={() => toggleRow(rowId)} style={{ cursor: 'pointer' }}>
+                                <tr onClick={() => toggleRow(rowId)} style={{ cursor: 'pointer' }} className={expandedRow === rowId ? "table-row-grey" : ""}>
                                     {displayedColumns.map((column, colIndex) => {
                                         if (colIndex === 0) {
                                             return (
@@ -87,7 +87,7 @@ const Table = ({
                                     })}
                                 </tr>
                                 {expandedRow === rowId && (
-                                    <tr className="expanded-row">
+                                    <tr className={`"expanded-row" ${expandedRow === rowId ? "table-row-grey" : ""}`}>
                                         {getLeftoverColumns(row).reverse().map((col, colIndex) => (
                                             <td key={colIndex}>
                                                 {row[col.accessor]}
