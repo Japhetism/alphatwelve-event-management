@@ -19,3 +19,38 @@
     gap: 10px;
     margin-top: 40px;
 }
+
+.event-container {
+    margin-top: 40px;
+}
+
+.event-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.event-registration-title {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 12px;
+    text-align: left;
+    color: #000000;    
+}
+
+.event-registration-section {
+    width: 554px;
+    height:320px;
+    border: 1px solid var(--Grays-Gray-6, #F2F2F7)
+}
+
+.event-slider-container {
+    width: 510px;
+    height: 320px;
+    border: 1px solid var(--Grays-Gray-6, #F2F2F7)
+}
+
+.event-chart {
+    padding: 40px;
+}

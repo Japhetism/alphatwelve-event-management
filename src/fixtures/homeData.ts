@@ -21,5 +21,19 @@ export const homeData = {
             value: "$500,000",
             percentage: 5
         }
-    ]
+    ],
+    monthlyEvents: {
+        jan: 650,
+        feb: 900,
+        mar: 780,
+        apr: 410,
+        may: 1000,
+        jun: 580,
+        jul: 830,
+        aug: 300,
+        sep: 830,
+        oct: 650,
+        nov: 980,
+        dec: 750
+    }
 }
