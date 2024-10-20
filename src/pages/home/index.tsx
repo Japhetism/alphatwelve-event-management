@@ -44,6 +44,7 @@ const Home = () => {
             <div className="home-statistics">
                 {statistics.map((item: ICard, index) => (
                     <Card
+                        key={index}
                         title={item.title}
                         value={item.value}
                         percentage={item.percentage}
