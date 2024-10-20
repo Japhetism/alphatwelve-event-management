@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronRightIcon } from "../../assets/icons/chevronRightIcon";
 import { ChevronLeftIcon } from "../../assets/icons/chevronLeftIcon";
+import { ChevronDownIcon } from "../../assets/icons/chevronDownIcon"; // Add this line for the down arrow icon
 import { ITableProps } from "../../interfaces/table";
 import "./table.css";
 
@@ -68,11 +69,22 @@ const Table = ({
                         return (
                             <React.Fragment key={rowId}>
                                 <tr onClick={() => toggleRow(rowId)} style={{ cursor: 'pointer' }}>
-                                    {displayedColumns.map((column, colIndex) => (
-                                        <td key={colIndex}>
-                                            {column.render ? column.render(row) : row[column.accessor]}
-                                        </td>
-                                    ))}
+                                    {displayedColumns.map((column, colIndex) => {
+                                        if (colIndex === 0) {
+                                            return (
+                                                <td key={colIndex} className="with-icon">
+                                                    <div className="table-cell-icon">{expandedRow === rowId ? <ChevronDownIcon /> : <ChevronRightIcon />}</div>
+                                                    <div>{column.render ? column.render(row) : row[column.accessor]}</div>
+                                                </td>
+                                            )
+                                        } else {
+                                            return (
+                                                <td key={colIndex}>
+                                                    {column.render ? column.render(row) : row[column.accessor]}
+                                                </td>
+                                            )
+                                        }
+                                    })}
                                 </tr>
                                 {expandedRow === rowId && (
                                     <tr className="expanded-row">

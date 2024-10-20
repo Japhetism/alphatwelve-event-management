@@ -104,8 +104,24 @@ td {
     border: 1px solid #E2E8F0;
 }
 
+.with-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.table-cell-icon {
+    display: block;
+}
+
 @media (min-width: 768px) {
     .expanded-row {
+        display: none;
+    }
+
+    .table-cell-icon {
         display: none;
     }
 }
