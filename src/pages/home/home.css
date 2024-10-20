@@ -68,10 +68,6 @@
     color: #000000;
 }
 
-.footer-tabs {
-   display: none;
-}
-
 @media (max-width: 768px) {
     .home-container {
         margin-top: 80px;
@@ -100,10 +96,5 @@
 
     .event-chart {
         padding: 10px;
-    }
-
-    .footer-tabs {
-        display: block;
-        margin-top: 40px;
     }
 }

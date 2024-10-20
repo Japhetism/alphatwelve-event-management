@@ -15,6 +15,10 @@
   margin-left: 100px;
 }
 
+.footer-tabs {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .app {
     flex-direction: column;
@@ -22,6 +26,11 @@
 
   .content {
     margin-left: 0;
+  }
+
+  .footer-tabs {
+    display: block;
+    margin-top: 40px;
   }
 
 }
