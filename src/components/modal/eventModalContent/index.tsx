@@ -32,12 +32,16 @@ const EventModalContent = ({
             </div>
             <div className="event-button-container">
                 <div className="event-modal-footer-section">
-                    <div>
+                    <div className="edit-event-button-container">
                         <button className="edit-event-button">Edit</button>
                     </div>
                     <div className="event-completed-container">
-                        <button className="delete-event-button">Delete</button>
-                        <button className="complete-event-button">Mark as Completed</button>
+                        <div className="delete-event-button-container">
+                            <button className="delete-event-button">Delete</button>
+                        </div>
+                        <div className="complete-event-button-container">
+                            <button className="complete-event-button">Mark as Completed</button>
+                        </div>
                     </div>
                 </div>
             </div>
