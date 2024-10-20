@@ -69,7 +69,7 @@
 }
 
 .footer-tabs {
-    margin-top: 40px;
+   display: none;
 }
 
 @media (max-width: 768px) {
@@ -100,5 +100,10 @@
 
     .event-chart {
         padding: 10px;
+    }
+
+    .footer-tabs {
+        display: block;
+        margin-top: 40px;
     }
 }
