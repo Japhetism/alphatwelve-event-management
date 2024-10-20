@@ -69,3 +69,9 @@
 .card-negative-difference {
     color: #F43F5E;
 }
+
+@media (max-width: 768px) {
+    .card-container {
+        width: 100%;
+    }
+}
