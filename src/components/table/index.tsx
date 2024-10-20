@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronRightIcon } from "../../assets/icons/chevronRightIcon";
 import { ChevronLeftIcon } from "../../assets/icons/chevronLeftIcon";
-import { ChevronDownIcon } from "../../assets/icons/chevronDownIcon"; // Add this line for the down arrow icon
+import { ChevronDownIcon } from "../../assets/icons/chevronDownIcon";
 import { ITableProps } from "../../interfaces/table";
 import "./table.css";
 
