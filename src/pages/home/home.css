@@ -81,4 +81,20 @@
         gap: 20px;
         margin-top: 40px;
     }
+
+    .event-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .event-slider-container,.event-registration-section {
+        width: 100%;
+        height: auto;
+    }
+
+    .event-chart {
+        padding: 10px;
+    }
 }
