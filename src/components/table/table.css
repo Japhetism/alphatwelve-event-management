@@ -15,7 +15,6 @@ th, td {
     border: none;
     padding: 8px;
     text-align: left;
-    width: 269px;
     height: 48px;
     font-family: Inter;
 }
@@ -57,9 +56,6 @@ td {
 }
 
 .pagination-button-number:disabled {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: var(--Primary, #8576FF);
     cursor: not-allowed;
     opacity: 0.5;
@@ -70,7 +66,6 @@ td {
     font-family: Inter;
     font-size: 14px;
     font-weight: 400;
-    line-height: 20px;
     text-align: center;
 }
 
@@ -98,15 +93,19 @@ td {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
-    text-align: left;
     color: #334155;
 }
 
 .row-select {
     width: 96px;
     height: 36px;
-    border-radius: 2px 0px 0px 0px;
-    opacity: 0px;
+    border-radius: 2px 0 0 0;
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
+}
+
+@media (min-width: 768px) {
+    .expanded-row {
+        display: none;
+    }
 }
