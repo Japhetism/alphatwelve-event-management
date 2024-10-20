@@ -6,7 +6,7 @@ import { LeftIcon } from "../../assets/icons/leftIcon";
 import { SwitchIcon } from "../../assets/icons/switchIcon";
 import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
 import { ExpandIcon } from "../../assets/icons/expandIcon";
-import { menuItems } from "../../fixtures/sidemenu";
+import { sideMenuItems } from "../../fixtures/sidemenu";
 import "./sidemenu.css";
 
 const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void }> = ({ onCollapseToggle }) => {
@@ -26,7 +26,7 @@ const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void }> = (
         <div className={`side-menu ${isCollapsed ? 'collapsed' : ''}`}>
             <AppBar onMenuToggle={handleMenuToggle} isMenuOpen={isMenuOpen} />
             <ul className={isMenuOpen ? "side-menu-open" : "side-menu-close"}>
-                {menuItems.map((item: ISideMenuItem) => (
+                {sideMenuItems.map((item: ISideMenuItem) => (
                     <li key={item.id}>
                         <NavLink 
                             to={item.link} 

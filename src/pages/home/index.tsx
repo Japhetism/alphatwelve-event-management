@@ -5,11 +5,14 @@ import BarChart from "../../components/chart/barchart";
 import EventFilters from "../../components/filters/eventFilters";
 import Modal from "../../components/modal";
 import EventTable from "../../components/table/event";
-import { homeData } from "../../fixtures/homeData";
-import { ICard } from "../../interfaces/card";
-import "./home.css";
+import Tabs from "../../components/tabs";
 import EventModalContent from "../../components/modal/eventModalContent";
+import { homeData } from "../../fixtures/homeData";
+import { footerMenuItems } from "../../fixtures/sidemenu";
+import { ICard } from "../../interfaces/card";
 import { IEvent } from "../../interfaces/event";
+
+import "./home.css";
 
 const initialSelectedEvent: IEvent = {
     name: "",
@@ -74,6 +77,9 @@ const Home = () => {
                     <EventFilters />
                     <EventTable events={events} onClick={openModal} />
                 </div>
+            </div>
+            <div className="footer-tabs">
+                <Tabs tabs={footerMenuItems} />
             </div>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <EventModalContent event={selectedEvent} />

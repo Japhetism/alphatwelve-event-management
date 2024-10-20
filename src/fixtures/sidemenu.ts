@@ -4,10 +4,11 @@ import { MessageIcon } from "../assets/icons/messageIcon";
 import { NotificationIcon } from "../assets/icons/notificationIcon";
 import { ReportIcon } from "../assets/icons/reportIcon";
 import { SettingsIcon } from "../assets/icons/settingsIcon";
+import { UserMaskIcon } from "../assets/icons/userMaskIcon";
 import { UserPlusIcon } from "../assets/icons/userPlusIcon";
 import { ISideMenuItem } from "../interfaces/sidemenu";
 
-export const menuItems: ISideMenuItem[] = [
+export const sideMenuItems: ISideMenuItem[] = [
     {
         id: 1,
         name: "Home",
@@ -51,4 +52,12 @@ export const menuItems: ISideMenuItem[] = [
         link: "/settings",
         icon: SettingsIcon,
     }
+];
+
+export const  footerMenuItems = [
+    { title: "Home", icon: HomeIcon },
+    { title: "Events", icon: CalendarIcon },
+    { title: "Speakers", icon: UserPlusIcon },
+    { title: "Reports", icon: ReportIcon },
+    { title: "Profile", icon: UserMaskIcon},
 ];
