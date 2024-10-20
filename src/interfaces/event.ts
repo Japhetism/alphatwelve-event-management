@@ -1,6 +1,8 @@
 export interface IEvent {
     id: number;
-    eventName: string;
+    name: string;
+    description: string;
+    attendees: number
     date: string;
     speaker: string;
     status: string;

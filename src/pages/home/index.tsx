@@ -1,13 +1,38 @@
+import { useState } from "react";
 import Card from "../../components/card";
 import Carousel from "../../components/carousel";
 import BarChart from "../../components/chart/barchart";
 import EventFilters from "../../components/filters/eventFilters";
+import Modal from "../../components/modal";
 import EventTable from "../../components/table/event";
 import { homeData } from "../../fixtures/homeData";
 import { ICard } from "../../interfaces/card";
 import "./home.css";
+import EventModalContent from "../../components/modal/eventModalContent";
+import { IEvent } from "../../interfaces/event";
+
+const initialSelectedEvent: IEvent = {
+    name: "",
+    description: "",
+    attendees: 0,
+    status: "",
+    date: "",
+    id: 0,
+    speaker: "",
+}
 
 const Home = () => {
+    const [selectedEvent, setSelectedEvent] = useState(initialSelectedEvent);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = (event: IEvent) => {
+        setSelectedEvent(event);
+        setIsModalOpen(true);
+    }
+    const closeModal = () => {
+        setSelectedEvent(initialSelectedEvent);
+        setIsModalOpen(false);
+    }
 
     const { statistics, monthlyEvents, news, events } = homeData;
     const eventLabels = Object.keys(monthlyEvents).map(month => month.charAt(0).toUpperCase() + month.slice(1, 3));
@@ -46,9 +71,12 @@ const Home = () => {
                 <div className="event-history">
                     <p className="event-history-header">Event History</p>
                     <EventFilters />
-                    <EventTable events={events} />
+                    <EventTable events={events} onClick={openModal} />
                 </div>
             </div>
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <EventModalContent event={selectedEvent} />
+            </Modal>
         </div>
     )
 }

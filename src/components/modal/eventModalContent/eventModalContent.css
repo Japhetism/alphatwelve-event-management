@@ -1,0 +1,128 @@
+.event-modal-container {
+    width: 440px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.event-modal-content-section {
+    padding: 20px;
+}
+
+.event-modal-footer-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-name {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    text-align: left;
+    color: #334155;
+}
+
+.event-date {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #64748B;
+}
+
+.event-description-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.event-description {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #334155;
+}
+
+.event-button-container {
+    width: 440px;
+    height: 84px;
+    background: #F8FAFC;
+}
+
+.event-completed-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.delete-event-button {
+    width: 75px;
+    height: 36px;
+    border: 1px solid #F43F5E;
+    border-radius: 2px;
+    background: #F43F5E;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+}
+
+.complete-event-button {
+    width: 159px;
+    height: 36px;
+    border: 1px solid #8576FF;
+    border-radius: 2px;
+    background: var(--Primary, #8576FF);
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+}
+
+.edit-event-button {
+    width: 58px;
+    height: 36px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 2px;
+    color: #334155;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+}
+
+.event-image-container {
+    position: relative;
+    display: flex;
+}
+
+img {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin-right: -10px;
+}
+
+img:nth-child(1) {
+    z-index: 3;
+}
+
+img:nth-child(2) {
+    z-index: 2;
+}
+
+img:nth-child(3) {
+    z-index: 1;
+}

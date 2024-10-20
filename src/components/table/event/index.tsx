@@ -3,14 +3,24 @@ import { IEvent } from "../../../interfaces/event";
 import "./event.css";
 
 interface IEventTable {
-    events: IEvent[]
+    events: IEvent[];
+    onClick: (event: IEvent) => void;
 }
 
 const EventTable = ({
-    events
+    events,
+    onClick,
 }: IEventTable) => {
     const columns = [
-        { header: "Event Name", accessor: "eventName" },
+        {
+            header: "Event Name",
+            accessor: "name",
+            render: (row: IEvent) => (
+                <div onClick={() => onClick(row)} className="event-name-cell">
+                    {row.name}
+                </div>
+            ),
+        },
         { header: "Date", accessor: "date" },
         { header: "Speaker", accessor: "speaker" },
         {
