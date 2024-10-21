@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { SearchIcon } from '../../assets/icons/searchIcon';
-import './searchInput.css';
+import React, { useState } from "react";
+import { SearchIcon } from "../../assets/icons/searchIcon";
+import { useDarkMode } from "../../hooks/useDarkMode";
+import "./searchInput.css";
 
 interface ISearchInput {
     className: string;
@@ -9,14 +10,17 @@ interface ISearchInput {
 const SearchInput = ({
     className,
 }: ISearchInput) => {
-    const [searchTerm, setSearchTerm] = useState('');
+
+    const { isDarkMode } = useDarkMode();
+    
+    const [searchTerm, setSearchTerm] = useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
     };
 
     const handleSearch = () => {
-        console.log('Searching for:', searchTerm);
+        console.log("Searching for:", searchTerm);
     };
 
     return (
@@ -29,7 +33,7 @@ const SearchInput = ({
                 value={searchTerm}
                 onChange={handleChange}
                 placeholder="Search..."
-                className="search-input"
+                className={`search-input ${isDarkMode ? "dark-mode" : ""}`}
             />
         </div>
   );

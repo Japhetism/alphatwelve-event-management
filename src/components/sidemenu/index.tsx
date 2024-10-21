@@ -4,6 +4,7 @@ import AppBar from "../appBar";
 import { ISideMenuItem } from "../../interfaces/sidemenu";
 import { LeftIcon } from "../../assets/icons/leftIcon";
 import { SwitchIcon } from "../../assets/icons/switchIcon";
+import { SwitchOnIcon } from "../../assets/icons/switchOnIcon";
 import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
 import { ExpandIcon } from "../../assets/icons/expandIcon";
 import { sideMenuItems } from "../../fixtures/sidemenu";
@@ -62,7 +63,7 @@ const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void; }> = 
                 </li>
                 <li>
                     <div className="menu-item extra-link" onClick={toggleDarkMode}>
-                        <SwitchIcon />
+                        {isDarkMode ? <SwitchOnIcon /> : <SwitchIcon />}
                         {!isCollapsed && "Dark mode"}
                     </div>
                 </li>

@@ -207,3 +207,25 @@
         width: 100%;
     }
 }
+
+/* Dark mode styles */
+.filter-container.dark-mode .search {
+    border: 1px solid #6A6676;
+    background: #6A6676;
+}
+
+.filter-container.dark-mode .date,
+.filter-container.dark-mode .status,
+.filter-container.dark-mode .name,
+.filter-container.dark-mode .sort-recent,
+.filter-container.dark-mode .sort-ellipsis,
+.filter-container.dark-mode .download {
+    border: 1px solid #6A6676;
+    background: #6A6676;
+    color: #FFFFFF;
+}
+
+.filter-container.dark-mode .display-label,
+.filter-container.dark-mode .display-sort {
+    color: #FFFFFF;
+}

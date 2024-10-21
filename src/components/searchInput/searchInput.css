@@ -11,4 +11,14 @@
     padding: 10px;
     font-size: 16px;
 }
+
+/* Dark mode styles */
+.search-input.dark-mode {
+    background: #6A6676;
+    color: #FFFFFF;
+}
+
+.search-input.dark-mode::placeholder {
+    color: #FFFFFF;
+}
   

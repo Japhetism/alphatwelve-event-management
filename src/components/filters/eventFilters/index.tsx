@@ -1,11 +1,15 @@
 import SearchInput from "../../searchInput";
 import { DownloadIcon } from "../../../assets/icons/downloadIcon";
 import { VerticalEllipsisIcon } from "../../../assets/icons/verticalEllipsisIcon";
+import { useDarkMode } from "../../../hooks/useDarkMode";
 import "./eventFilters.css";
 
 const EventFilters = () => {
+
+    const { isDarkMode } = useDarkMode();
+    
     return (
-        <div className="filter-container">
+        <div className={`filter-container ${isDarkMode ? "dark-mode" : ""}`}>
             <div className="filter-section">
                 <div className="search-container">
                     <SearchInput className="search" />
@@ -36,12 +40,12 @@ const EventFilters = () => {
                 </div>
                 <div className="sort-ellipsis-container">
                     <button className="sort-ellipsis">
-                        <VerticalEllipsisIcon />
+                        <VerticalEllipsisIcon color={isDarkMode ? "#FFFFFF" : "#141414"} />
                     </button>
                 </div>
                 <div className="download-container">
                     <button className="download">
-                        <DownloadIcon />
+                        <DownloadIcon color={isDarkMode ? "#FFFFFF" : "#141414"} />
                         Export
                     </button>
                 </div>
