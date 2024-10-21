@@ -50,10 +50,15 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--Primary, #8576FF);
+  margin-top: 2px;
+  border-top: 5px solid var(--Primary, #8576FF);
 }
 
 /* Dark mode styles */
+.tabs.dark-mode {
+  border-top: 1px solid var(--Primary-Select, #ADA9BB);
+}
+
 .tabs.dark-mode .tab-title-container {
   background: inherit;
   color: #FFFFFF;
