@@ -23,11 +23,10 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
                 {tabs.map((tab, index) => {
                     const Icon = tab.icon;
                     return (
-                        <div className={`tab-title-container ${activeTabIndex === index ? "active" : ""}`} key={index}>
+                        <div className={`tab-title-container ${activeTabIndex === index ? "active" : ""}`} key={index} onClick={() => setActiveTabIndex(index)}>
                             <Icon color={activeTabIndex === index ? "#8576FF" : (isDarkMode ? "#FFFFFF" : "#ADA9BB")} />
                             <button
                                 key={index}
-                                onClick={() => setActiveTabIndex(index)}
                                 className={`tab-title ${activeTabIndex === index ? "active" : ""}`}
                             >
                                 {tab.title}
