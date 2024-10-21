@@ -71,6 +71,7 @@
 .extra-link {
     font-size: 12px;
     line-height: 16px;
+    cursor: pointer;
 }
 
 .user-section {
