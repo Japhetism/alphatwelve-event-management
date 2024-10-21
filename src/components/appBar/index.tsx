@@ -3,9 +3,9 @@ import { CloseIcon } from "../../assets/icons/closeIcon";
 import { IAppBar } from "../../interfaces/appBar";
 import "./appBar.css";
 
-const AppBar = ({ isMenuOpen, onMenuToggle }: IAppBar) => {
+const AppBar = ({ isMenuOpen, onMenuToggle, isDarkMode }: IAppBar) => {
     return (
-        <div className="app-bar">
+        <div className={`app-bar ${isDarkMode ? 'dark-mode' : ''}`}>
             <h2>Full Logo</h2>
             <div className={`menu-toggle ${isMenuOpen ? "close-container" : ""}`} onClick={onMenuToggle}>
                 {isMenuOpen ? <CloseIcon/> : <HamburgerIcon /> }

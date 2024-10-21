@@ -18,6 +18,7 @@ const BarChart = ({
     title,
     borderColor,
     backgroundColor,
+    tickColor,
 }: IBarChart) => {
     const barChartData = {
         labels: labels,
@@ -49,12 +50,16 @@ const BarChart = ({
                 grid: {
                     display: false,
                 },
+                ticks: {
+                    color: tickColor
+                }
             },
             y: {
                 grid: {
                     display: false,
                 },
                 ticks: {
+                    color: tickColor,
                     callback: function(value: any) {
                         return [0, 200, 400, 600, 800, 1000].includes(value) ? value : '';
                     },

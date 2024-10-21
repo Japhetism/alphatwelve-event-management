@@ -9,7 +9,7 @@ import EventModalContent from "../../components/modal/eventModalContent";
 import { homeData } from "../../fixtures/homeData";
 import { ICard } from "../../interfaces/card";
 import { IEvent } from "../../interfaces/event";
-
+import { useDarkMode } from "../../hooks/useDarkMode";
 import "./home.css";
 
 const initialSelectedEvent: IEvent = {
@@ -23,6 +23,7 @@ const initialSelectedEvent: IEvent = {
 }
 
 const Home = () => {
+    const { isDarkMode } = useDarkMode();
     const [selectedEvent, setSelectedEvent] = useState(initialSelectedEvent);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -40,7 +41,7 @@ const Home = () => {
     const eventData = Object.values(monthlyEvents);
 
     return (
-        <div className="home-container">
+        <div className={`home-container ${isDarkMode ? 'dark-mode' : ''}`}>
             <div className="home-title">Welcome! here is your summary</div>
             <div className="home-statistics">
                 {statistics.map((item: ICard, index) => (
@@ -63,6 +64,7 @@ const Home = () => {
                                 backgroundColor="#8576FF"
                                 labels={eventLabels}
                                 data={eventData}
+                                tickColor={isDarkMode ? "#FFFFFF" : "#64748B"}
                             />
                         </div>
                     </div>

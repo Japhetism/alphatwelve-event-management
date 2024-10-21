@@ -150,3 +150,30 @@
         display: block;
     }
 }
+
+/* Dark mode styles */
+.side-menu.dark-mode {
+    background-color: #6A6676;
+    border: 1px solid var(--Primary-Dark, #6A6676);
+    color: #FFFFFF;
+}
+
+.side-menu.dark-mode .inactive-link {
+    background-color: #6A6676;
+    color: #FFFFFF;
+}
+
+.side-menu.dark-mode .active-link {
+    background: var(--Primary, #8576FF);
+    color: #FFFFFF;
+}
+
+.side-menu.dark-mode .extra-link {
+    background-color: #6A6676;
+    color: #FFFFFF;
+}
+
+.side-menu.dark-mode .user-section {
+    background-color: #6A6676;
+    color: #FFFFFF;
+}

@@ -40,7 +40,7 @@
 }
 
 .event-registration-section {
-    width: 594px;
+    width: 554px;
     height:320px;
     border: 1px solid var(--Grays-Gray-6, #F2F2F7)
 }
@@ -97,4 +97,19 @@
     .event-chart {
         padding: 10px;
     }
+}
+
+/* Dark mode styles */
+.home-container.dark-mode .home-title, .home-container.dark-mode .event-registration-title, .home-container.dark-mode .event-history-header {
+    color: #FFFFFF;
+}
+
+.home-container.dark-mode .event-registration-section {
+    background-color: #6A6676;
+    border: 1px solid var(--Primary-Dark, #6A6676);
+    color: #FFFFFF;
+}
+
+.home-container.dark-mode .event-slider-container {
+    border: 1px solid var(--Primary-Dark, #6A6676);
 }

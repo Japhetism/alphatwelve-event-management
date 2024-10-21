@@ -4,4 +4,5 @@ export interface IBarChart {
     title: string;
     borderColor: string;
     backgroundColor: string;
+    tickColor: string;
 }

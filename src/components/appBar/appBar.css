@@ -44,3 +44,8 @@
         background: #FFFFFF;
     }
 }
+
+/* Dark mode styles */
+.app-bar.dark-mode {
+    background-color: #6A6676;
+}

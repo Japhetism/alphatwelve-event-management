@@ -75,3 +75,14 @@
         width: 100%;
     }
 }
+
+/* Dark mode styles */
+.card-container.dark-mode {
+    color: #FFFFFF;
+    border: 1px solid #6A6676;
+    background-color: #6A6676;
+}
+
+.card-container.card-container.dark-mode .card-title, .card-container.card-container.dark-mode .card-value {
+    color: #FFFFFF;
+}

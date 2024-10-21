@@ -8,8 +8,10 @@ import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
 import { ExpandIcon } from "../../assets/icons/expandIcon";
 import { sideMenuItems } from "../../fixtures/sidemenu";
 import "./sidemenu.css";
+import { useDarkMode } from "../../hooks/useDarkMode";
 
-const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void }> = ({ onCollapseToggle }) => {
+const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void; }> = ({ onCollapseToggle }) => {
+    const { isDarkMode, toggleDarkMode } = useDarkMode();
     const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -20,11 +22,11 @@ const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void }> = (
 
     const handleMenuToggle = () => {
         setIsMenuOpen(!isMenuOpen);
-    }
+    };
 
     return (
-        <div className={`side-menu ${isCollapsed ? 'collapsed' : ''}`}>
-            <AppBar onMenuToggle={handleMenuToggle} isMenuOpen={isMenuOpen} />
+        <div className={`side-menu ${isCollapsed ? 'collapsed' : ''} ${isDarkMode ? 'dark-mode' : ''}`}>
+            <AppBar onMenuToggle={handleMenuToggle} isMenuOpen={isMenuOpen} isDarkMode={isDarkMode} />
             <ul className={isMenuOpen ? "side-menu-open" : "side-menu-close"}>
                 {sideMenuItems.map((item: ISideMenuItem) => (
                     <li key={item.id}>
@@ -34,7 +36,9 @@ const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void }> = (
                         >
                             {({ isActive }) => {
                                 const Icon = item.icon;
-                                const iconColor: string = isActive ? "#8576FF" : "#ADA9BB";
+                                const iconColor: string = isActive 
+                                    ? (isDarkMode ? "#FFFFFF" : "#8576FF") 
+                                    : "#ADA9BB";
                                 return (
                                     <>
                                         <Icon color={iconColor} />
@@ -57,7 +61,7 @@ const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void }> = (
                     </div>
                 </li>
                 <li>
-                    <div className="menu-item extra-link" onClick={() => console.log("here")}>
+                    <div className="menu-item extra-link" onClick={toggleDarkMode}>
                         <SwitchIcon />
                         {!isCollapsed && "Dark mode"}
                     </div>

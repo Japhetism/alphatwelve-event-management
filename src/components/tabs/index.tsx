@@ -19,7 +19,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
                 {tabs.map((tab, index) => {
                     const Icon = tab.icon;
                     return (
-                        <div className={`tab-title-container ${activeTabIndex === index ? "active" : ""}`}>
+                        <div className={`tab-title-container ${activeTabIndex === index ? "active" : ""}`} key={index}>
                             <Icon color={activeTabIndex === index ? "#8576FF" : "#ADA9BB"} />
                             <button
                                 key={index}
