@@ -8,7 +8,12 @@ const AppBar = ({ isMenuOpen, onMenuToggle, isDarkMode }: IAppBar) => {
         <div className={`app-bar ${isDarkMode ? 'dark-mode' : ''}`}>
             <h2>Full Logo</h2>
             <div className={`menu-toggle ${isMenuOpen ? "close-container" : ""}`} onClick={onMenuToggle}>
-                {isMenuOpen ? <CloseIcon/> : <HamburgerIcon /> }
+                {isMenuOpen
+                ? 
+                    <CloseIcon color={isDarkMode ? "#484554" : "#334155"} />
+                : 
+                    <HamburgerIcon color={isDarkMode ? "#FCF7FF" : "#64748B"} /> 
+                }
             </div>
         </div>
     );
