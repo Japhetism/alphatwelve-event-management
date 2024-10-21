@@ -66,7 +66,7 @@ const Table = ({
                                         if (colIndex === 0) {
                                             return (
                                                 <td key={colIndex} className="with-icon">
-                                                    <div className="table-cell-icon">{expandedRow === rowId ? <ChevronDownIcon /> : <ChevronRightIcon />}</div>
+                                                    <div className="table-cell-icon">{expandedRow === rowId ? <ChevronDownIcon color={isDarkMode ? "#FFFFFF" : "#334155"} /> : <ChevronRightIcon color={isDarkMode ? "#FFFFFF" : "#334155"} />}</div>
                                                     <div>{column.render ? column.render(row) : row[column.accessor]}</div>
                                                 </td>
                                             )

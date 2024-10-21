@@ -8,8 +8,8 @@ import { SwitchOnIcon } from "../../assets/icons/switchOnIcon";
 import { UserMaskIcon } from "../../assets/icons/userMaskIcon";
 import { ExpandIcon } from "../../assets/icons/expandIcon";
 import { sideMenuItems } from "../../fixtures/sidemenu";
-import "./sidemenu.css";
 import { useDarkMode } from "../../hooks/useDarkMode";
+import "./sidemenu.css";
 
 const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void; }> = ({ onCollapseToggle }) => {
     const { isDarkMode, toggleDarkMode } = useDarkMode();

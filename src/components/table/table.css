@@ -65,3 +65,7 @@ td {
 .dark-mode td {
     color: #FFFFFF;
 }
+
+.dark-mode .table-row-grey  {
+    background: var(--Primary-Dark, #484554);
+}
