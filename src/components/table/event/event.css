@@ -54,7 +54,7 @@
 
 /* Dark mode styles */
 .row-status-container.dark-mode {
-    background: #6A6676;
+    background: inherit;
 }
 
 .row-status-container.dark-mode .row-status-completed {
