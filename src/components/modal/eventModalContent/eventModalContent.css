@@ -179,3 +179,14 @@ img:nth-child(3) {
         width: 100%;
     }
 }
+
+/* Dark mode styles */
+.event-modal-container.dark-mode .event-button-container {
+    background: var(--Primary-Select, #ADA9BB);
+}
+
+.event-modal-container.dark-mode .event-name,
+.event-modal-container.dark-mode .event-date,
+.event-modal-container.dark-mode .event-description {
+    color: #FFFFFF;
+}

@@ -1,3 +1,4 @@
+import { useDarkMode } from "../../../hooks/useDarkMode";
 import { IEvent } from "../../../interfaces/event";
 import "./eventModalContent.css";
 
@@ -8,8 +9,11 @@ interface IEventModalContent {
 const EventModalContent = ({
     event
 }: IEventModalContent) => {
+
+    const { isDarkMode } = useDarkMode();
+    
     return (
-        <div className="event-modal-container">
+        <div className={`event-modal-container ${isDarkMode ? "dark-mode" : ""}`}>
             <div className="event-modal-content-section">
                 <div>
                     <span className="event-name">{event.name}</span><br/>

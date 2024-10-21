@@ -25,6 +25,8 @@
     background: transparent;
     font-size: 20px;
     cursor: pointer;
+    border: 1px solid #E2E8F0;
+    border-radius: 100px;
 }
 
 @media (max-width: 768px) {
@@ -32,4 +34,14 @@
         width: 90%;
     }
 }
-  
+
+/* Dark mode styles */
+.modal-overlay.dark-mode .modal-content {
+    background: var(--Primary-Dark, #484554);
+    color: #FFFFFF;
+}
+
+.modal-overlay.dark-mode .close-button {
+    background: var(--Primary-Select, #ADA9BB);
+    border: 1px solid #ADA9BB;
+}
