@@ -1,4 +1,5 @@
 import React from "react";
+import { CloseIcon } from "../../assets/icons/closeIcon";
 import { useDarkMode } from "../../hooks/useDarkMode";
 import "./modal.css";
 
@@ -18,7 +19,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         <div className={`modal-overlay ${isDarkMode ? "dark-mode" : ""}`} onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <button className="close-button" onClick={onClose}>
-                    &times;
+                    <CloseIcon color="#334155" />
                 </button>
                 {children}
             </div>
