@@ -20,6 +20,7 @@ const Pages = () => {
             <SideMenu onCollapseToggle={handleCollapseToggle} />
             <div className={`content ${isCollapsed ? "collapsed" : ""}`}>
                 <Routes>
+                    <Route path="/" element={<Home />} />
                     <Route path="/home" element={<Home />} />
                 </Routes>
             </div>
