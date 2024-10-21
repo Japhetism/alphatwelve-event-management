@@ -103,7 +103,9 @@
 }
 
 .side-menu.collapsed h2 {
-    display: none;
+    content: "";
+    background: #93C5FD;
+    color: #93C5FD;
 }
 
 .side-menu.collapsed ul {
