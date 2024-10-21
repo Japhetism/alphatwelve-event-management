@@ -38,6 +38,10 @@
         height: auto;
     }
 
+    .content.collapsed {
+        margin-left: 0px;
+    }
+
     .footer-tabs {
         display: block;
         position: fixed;
