@@ -38,10 +38,10 @@ const Carousel = ({ data }: ICarousel) => {
                 ))}
             </div>
             <button className="carousel-control left" onClick={prevSlide}>
-                <ChevronLeftIcon />
+                <ChevronLeftIcon color="#334155" />
             </button>
             <button className="carousel-control right" onClick={nextSlide}>
-                <ChevronRightIcon />
+                <ChevronRightIcon color="#334155" />
             </button>
         </div>
     );
