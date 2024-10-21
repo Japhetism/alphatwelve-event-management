@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Card from "../../components/card";
 import Carousel from "../../components/carousel";
 import BarChart from "../../components/chart/barchart";
@@ -24,7 +24,7 @@ const initialSelectedEvent: IEvent = {
 
 const initialSearchFilters = {
     status: "",
-    sort: "",
+    sort: "most recent",
 }
 
 const Home = () => {
@@ -47,22 +47,33 @@ const Home = () => {
     const eventLabels = Object.keys(monthlyEvents).map(month => month.charAt(0).toUpperCase() + month.slice(1, 3));
     const eventData = Object.values(monthlyEvents);
 
+    const computedFilteredEvents = useMemo(() => {
+        let updatedEvents = events;
+
+        // Apply status filter
+        if (filters.status) {
+            updatedEvents = updatedEvents.filter(event => event.status === filters.status);
+        }
+
+        // Apply sorting by either most recent or least recent
+        if (filters.sort) {
+            updatedEvents.sort((a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                
+                return filters.sort === 'most recent'
+                    ? dateB.getTime() - dateA.getTime() // Sort descending
+                    : dateA.getTime() - dateB.getTime(); // Sort ascending
+            });
+        }
+
+        return updatedEvents;
+    }, [events, filters]);
+    
     useEffect(() => {
-        const handleEventFilter = () => {
-            let filteredEvents = events;
-    
-            // Apply status filter
-            if (filters.status) {
-                filteredEvents = filteredEvents.filter(event => event.status === filters.status);
-            }
-    
-            console.log("Filtered and sorted events: ", filteredEvents);
-            setFilteredEvents(filteredEvents);
-        };
-    
-        handleEventFilter();
-    }, [filters, events]);
-    
+        console.log("Filtered and sorted events: ", computedFilteredEvents);
+        setFilteredEvents(computedFilteredEvents);
+    }, [computedFilteredEvents]);
 
     return (
         <div className={`home-container ${isDarkMode ? 'dark-mode' : ''}`}>
