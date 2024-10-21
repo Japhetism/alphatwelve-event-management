@@ -1,19 +1,17 @@
-import React, { FC, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDarkMode } from "../../hooks/useDarkMode";
+import { ISideMenuItem } from "../../interfaces/sidemenu";
 import "./tabs.css";
 
-interface Tab {
-    title: string;
-    icon: FC<React.SVGProps<SVGSVGElement>>;
+interface ITabsProps {
+    tabs: ISideMenuItem[];
 }
 
-interface TabsProps {
-    tabs: Tab[];
-}
-
-const Tabs: React.FC<TabsProps> = ({ tabs }) => {
+const Tabs = ({ tabs }: ITabsProps) => {
 
     const { isDarkMode } = useDarkMode();
+    const navigate = useNavigate();
     
     const [activeTabIndex, setActiveTabIndex] = useState(0);
 
@@ -23,13 +21,20 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
                 {tabs.map((tab, index) => {
                     const Icon = tab.icon;
                     return (
-                        <div className={`tab-title-container ${activeTabIndex === index ? "active" : ""}`} key={index} onClick={() => setActiveTabIndex(index)}>
+                        <div
+                            className={`tab-title-container ${activeTabIndex === index ? "active" : ""}`}
+                            key={index}
+                            onClick={() => {
+                                setActiveTabIndex(index)
+                                navigate(tab.link)
+                            }}
+                        >
                             <Icon color={activeTabIndex === index ? "#8576FF" : (isDarkMode ? "#FFFFFF" : "#ADA9BB")} />
                             <button
                                 key={index}
                                 className={`tab-title ${activeTabIndex === index ? "active" : ""}`}
                             >
-                                {tab.title}
+                                {tab.name}
                             </button>
                         </div> 
                     )  

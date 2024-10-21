@@ -54,10 +54,10 @@ export const sideMenuItems: ISideMenuItem[] = [
     }
 ];
 
-export const  footerMenuItems = [
-    { title: "Home", icon: HomeIcon },
-    { title: "Events", icon: CalendarIcon },
-    { title: "Speakers", icon: UserPlusIcon },
-    { title: "Reports", icon: ReportIcon },
-    { title: "Profile", icon: UserCircleIcon },
+export const  footerMenuItems: ISideMenuItem[] = [
+    { id: 1, name: "Home", link: "/home", icon: HomeIcon },
+    { id: 2, name: "Events", link: "/events", icon: CalendarIcon },
+    { id: 3, name: "Speakers", link: "/speaker", icon: UserPlusIcon },
+    { id: 4, name: "Reports", link: "/reports", icon: ReportIcon },
+    { id: 5, name: "Profile", link: "/profile", icon: UserCircleIcon },
 ];
