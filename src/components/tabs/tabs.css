@@ -4,6 +4,7 @@
   width: 100%;
   height: auto;
   position: relative;
+  margin-bottom: 30px;
 }
 
 .tab-titles {
@@ -50,4 +51,15 @@
   right: 0;
   height: 2px;
   background: var(--Primary, #8576FF);
+}
+
+/* Dark mode styles */
+.tabs.dark-mode .tab-title-container {
+  background: inherit;
+  color: #FFFFFF;
+}
+
+.tabs.dark-mode button {
+  background: inherit;
+  color: #FFFFFF;
 }

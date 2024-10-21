@@ -4,7 +4,7 @@ import { MessageIcon } from "../assets/icons/messageIcon";
 import { NotificationIcon } from "../assets/icons/notificationIcon";
 import { ReportIcon } from "../assets/icons/reportIcon";
 import { SettingsIcon } from "../assets/icons/settingsIcon";
-import { UserMaskIcon } from "../assets/icons/userMaskIcon";
+import { UserCircleIcon } from "../assets/icons/userCircleIcon";
 import { UserPlusIcon } from "../assets/icons/userPlusIcon";
 import { ISideMenuItem } from "../interfaces/sidemenu";
 
@@ -59,5 +59,5 @@ export const  footerMenuItems = [
     { title: "Events", icon: CalendarIcon },
     { title: "Speakers", icon: UserPlusIcon },
     { title: "Reports", icon: ReportIcon },
-    { title: "Profile", icon: UserMaskIcon},
+    { title: "Profile", icon: UserCircleIcon },
 ];

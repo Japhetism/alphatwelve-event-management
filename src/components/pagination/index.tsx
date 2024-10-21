@@ -35,7 +35,7 @@ const Pagination = ({
     return (
         <div className={`pagination ${isDarkMode ? "dark-mode" : ""}`}>
             <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} className="pagination-button">
-                <ChevronLeftIcon />
+                <ChevronLeftIcon color={isDarkMode ? "#8576FF" : "#334155"} />
             </button>
 
             {Array.from({ length: totalPages }, (_, index) => (
@@ -50,7 +50,7 @@ const Pagination = ({
             ))}
 
             <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} className="pagination-button">
-                <ChevronRightIcon />
+                <ChevronRightIcon color={isDarkMode ? "#8576FF" : "#334155"} />
             </button>
 
             <div className="rows-per-page">
