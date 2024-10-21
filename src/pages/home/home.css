@@ -105,7 +105,7 @@
 }
 
 .home-container.dark-mode .event-registration-section {
-    background-color: #6A6676;
+    background: #6A6676;
     border: 1px solid var(--Primary-Dark, #6A6676);
     color: #FFFFFF;
 }

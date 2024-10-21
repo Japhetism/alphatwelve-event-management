@@ -16,17 +16,17 @@ const Pages = () => {
     };
 
     return (
-            <div className={`app ${isDarkMode ? "dark-mode" : ""}`}>
-                <SideMenu onCollapseToggle={handleCollapseToggle} />
-                <div className={`content ${isCollapsed ? "collapsed" : ""}`}>
-                    <Routes>
-                        <Route path="/home" element={<Home />} />
-                    </Routes>
-                </div>
-                <div className="footer-tabs">
-                  <Tabs tabs={footerMenuItems} />
-                </div>
+        <div className={`app ${isDarkMode ? "dark-mode" : ""}`}>
+            <SideMenu onCollapseToggle={handleCollapseToggle} />
+            <div className={`content ${isCollapsed ? "collapsed" : ""}`}>
+                <Routes>
+                    <Route path="/home" element={<Home />} />
+                </Routes>
             </div>
+            <div className="footer-tabs">
+                <Tabs tabs={footerMenuItems} />
+            </div>
+        </div>
     );
 };
 

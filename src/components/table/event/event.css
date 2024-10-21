@@ -51,3 +51,18 @@
     content: "In Progress";
     text-transform: none;
 }
+
+/* Dark mode styles */
+.row-status-container.dark-mode {
+    background: #6A6676;
+}
+
+.row-status-container.dark-mode .row-status-completed {
+    background: #6A6676;
+    border: 1px solid #10B981;
+}
+
+.row-status-container.dark-mode .row-status-in-progress {
+    background: #6A6676;
+    border: 1px solid #3B82F6;
+}
