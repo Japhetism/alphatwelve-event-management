@@ -5,8 +5,10 @@
 }
 
 .content {
+    width: 100%;
     margin-left: 280px;
     padding: 16px;
+    padding-right: 40px;
     height: 100vh;
     overflow-y: auto;
 }
@@ -30,7 +32,12 @@
     }
 
     .content {
-        margin-left: 0;
+        width: auto;
+        margin-left: 0px;
+        padding: 16px;
+        padding-right: 0px;
+        height: auto;
+        overflow-y: auto;
     }
 
     .footer-tabs {
