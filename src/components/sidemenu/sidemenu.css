@@ -151,6 +151,10 @@
     .side-menu-open {
         display: block;
     }
+
+    .collapse-menu {
+        display: none;
+    }
 }
 
 /* Dark mode styles */

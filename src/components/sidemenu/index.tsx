@@ -56,7 +56,7 @@ const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void; }> = 
                     </li>
                 ))}
                 <li>
-                    <div className="menu-item extra-link" onClick={toggleCollapse}>
+                    <div className="menu-item extra-link collapse-menu" onClick={toggleCollapse}>
                         {!isCollapsed ? <LeftIcon /> : <ExpandIcon />}
                         {!isCollapsed ? "Collapse" : ""}
                     </div>
