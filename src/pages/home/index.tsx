@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../../components/card";
 import Carousel from "../../components/carousel";
 import BarChart from "../../components/chart/barchart";
@@ -22,9 +22,16 @@ const initialSelectedEvent: IEvent = {
     speaker: "",
 }
 
+const initialSearchFilters = {
+    status: "",
+    sort: "",
+}
+
 const Home = () => {
     const { isDarkMode } = useDarkMode();
     const [selectedEvent, setSelectedEvent] = useState(initialSelectedEvent);
+    const [filters, setFilters] = useState(initialSearchFilters);
+    const [filteredEvents, setFilteredEvents] = useState<any>([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = (event: IEvent) => {
@@ -39,6 +46,23 @@ const Home = () => {
     const { statistics, monthlyEvents, news, events } = homeData;
     const eventLabels = Object.keys(monthlyEvents).map(month => month.charAt(0).toUpperCase() + month.slice(1, 3));
     const eventData = Object.values(monthlyEvents);
+
+    useEffect(() => {
+        const handleEventFilter = () => {
+            let filteredEvents = events;
+    
+            // Apply status filter
+            if (filters.status) {
+                filteredEvents = filteredEvents.filter(event => event.status === filters.status);
+            }
+    
+            console.log("Filtered and sorted events: ", filteredEvents);
+            setFilteredEvents(filteredEvents);
+        };
+    
+        handleEventFilter();
+    }, [filters, events]);
+    
 
     return (
         <div className={`home-container ${isDarkMode ? 'dark-mode' : ''}`}>
@@ -74,8 +98,8 @@ const Home = () => {
                 </div>
                 <div className="event-history">
                     <p className="event-history-header">Event History</p>
-                    <EventFilters />
-                    <EventTable events={events} onClick={openModal} />
+                    <EventFilters count={filteredEvents.length} setFilters={setFilters} filters={filters} />
+                    <EventTable events={filteredEvents} onClick={openModal} />
                 </div>
             </div>
             <Modal isOpen={isModalOpen} onClose={closeModal}>
