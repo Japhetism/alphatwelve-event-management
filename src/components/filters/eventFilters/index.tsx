@@ -18,7 +18,7 @@ const EventFilters = ({ count, filters, setFilters }: IEventFilters) => {
         <div className={`filter-container ${isDarkMode ? "dark-mode" : ""}`}>
             <div className="filter-section">
                 <div className="search-container">
-                    <SearchInput className="search" />
+                    <SearchInput className="search" onchange={(e: string) => setFilters({...filters, search: e})} />
                 </div>
                 <div className="date-container">
                     <select className="date">

@@ -23,6 +23,7 @@ const initialSelectedEvent: IEvent = {
 }
 
 const initialSearchFilters = {
+    search: "",
     status: "",
     sort: "most recent",
 }
@@ -50,6 +51,17 @@ const Home = () => {
     const computedFilteredEvents = useMemo(() => {
         let updatedEvents = events;
 
+        // Apply search filter
+        if (filters.search) {
+            const searchTerm = filters.search.toLowerCase();
+            updatedEvents = updatedEvents.filter(event =>
+                event.name.toLowerCase().includes(searchTerm) ||
+                event.status.toLowerCase().includes(searchTerm) ||
+                event.speaker.toLowerCase().includes(searchTerm) ||
+                new Date(event.date).toLocaleDateString().includes(searchTerm)
+            );
+        }
+
         // Apply status filter
         if (filters.status) {
             updatedEvents = updatedEvents.filter(event => event.status === filters.status);
@@ -71,7 +83,6 @@ const Home = () => {
     }, [events, filters]);
     
     useEffect(() => {
-        console.log("Filtered and sorted events: ", computedFilteredEvents);
         setFilteredEvents(computedFilteredEvents);
     }, [computedFilteredEvents]);
 
