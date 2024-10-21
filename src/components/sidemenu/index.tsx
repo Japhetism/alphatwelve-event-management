@@ -27,7 +27,7 @@ const SideMenu: React.FC<{ onCollapseToggle: (collapsed: boolean) => void; }> = 
 
     return (
         <div className={`side-menu ${isCollapsed ? 'collapsed' : ''} ${isDarkMode ? 'dark-mode' : ''}`}>
-            <AppBar onMenuToggle={handleMenuToggle} isMenuOpen={isMenuOpen} isDarkMode={isDarkMode} />
+            <AppBar onMenuToggle={handleMenuToggle} isMenuOpen={isMenuOpen} />
             <ul className={isMenuOpen ? "side-menu-open" : "side-menu-close"}>
                 {sideMenuItems.map((item: ISideMenuItem) => (
                     <li key={item.id}>

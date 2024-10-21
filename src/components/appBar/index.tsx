@@ -1,9 +1,11 @@
 import { HamburgerIcon } from "../../assets/icons/hamburgerIcon";
 import { CloseIcon } from "../../assets/icons/closeIcon";
 import { IAppBar } from "../../interfaces/appBar";
+import { useDarkMode } from "../../hooks/useDarkMode";
 import "./appBar.css";
 
-const AppBar = ({ isMenuOpen, onMenuToggle, isDarkMode }: IAppBar) => {
+const AppBar = ({ isMenuOpen, onMenuToggle }: IAppBar) => {
+    const { isDarkMode } = useDarkMode();
     return (
         <div className={`app-bar ${isDarkMode ? 'dark-mode' : ''}`}>
             <h2>Full Logo</h2>
